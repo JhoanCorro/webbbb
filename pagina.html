@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tec Family</title>
+    <link rel="stylesheet" href="facil.css">
+</head>
+<body>
+
+<!-- Encabezado -->
+<center><header></header>
+    <div class="logo">
+        <h1 style="text-align: center;">Tec Family</h1>
+    </div>
+    <nav>
+        <ul style="text-align: center;">
+            <li>
+                <img src="D:\Descargas Google\tec-Picsart-BackgroundRemover (1).png" alt="Tec Family" class="logo">
+            </li>
+        </ul>
+    </nav>
+</header>
+
+<!-- Página de detalles -->
+<div class="detalles" id="detalles" style="display: block; text-align: center;">
+    <ul>
+        <li><a href="#home">Inicio</a></li>
+        <li><a href="#productos">Productos</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+    </ul>
+   
+    <h2>Productos Destacados</h2>
+
+    <div class="producto">
+        <img src="https://m.media-amazon.com/images/I/71nkiAszs-L._AC_SL1500_.jpg" alt="Producto 1">
+        <div class="detalle">
+            <h3>Teclado Mecánico</h3>
+            <p>Teclado mecánico con switches rojos.</p>
+            <span class="precio">$499</span>
+            <button class="btn-compra" onclick="agregarAlCarrito('Teclado Mecánico', 499)">Comprar</button>
+        </div>
+    </div>
+
+    <div class="producto">
+        <img src="https://m.media-amazon.com/images/I/41Rh1AIbIYL._AC_SX679_.jpg" alt="Producto 2">
+        <div class="detalle">
+            <h3>Monitor Samsung 19"</h3>
+            <p>Monitor de alta calidad con excelente resolución.</p>
+            <span class="precio">$1,089</span>
+            <button class="btn-compra" onclick="agregarAlCarrito('Monitor Samsung', 1089)">Comprar</button>
+        </div>
+    </div>
+
+    <div class="producto">
+        <img src="https://m.media-amazon.com/images/I/51eXBGX+MYL._AC_SX679_.jpg" alt="Producto 3">
+        <div class="detalle">
+            <h3>Mouse Logitech G305</h3>
+            <p>Mouse inalámbrico ideal para gaming y oficina.</p>
+            <span class="precio">$973</span>
+            <button class="btn-compra" onclick="agregarAlCarrito('Mouse Logitech G305', 973)">Comprar</button>
+        </div>
+    </div>
+
+    <div class="producto">
+        <img src="https://m.media-amazon.com/images/I/51FRJHB7XOL.__AC_SX300_SY300_QL70_ML2_.jpg" alt="Producto 4">
+        <div class="detalle">
+            <h3>Razer BlackShark V2 X </h3>
+            <p>Audífonos con sonido envolvente 7.1.</p>
+            <span class="precio">$849</span>
+            <button class="btn-compra" onclick="agregarAlCarrito('Razer BlackShark V2 X', 849)">Comprar</button>
+        </div>
+    </div>
+
+    <div class="producto">
+        <img src="https://m.media-amazon.com/images/I/61NGqaBy-0L._AC_SX522_.jpg" alt="Producto 5">
+        <div class="detalle">
+            <h3>Webcam Full HD</h3>
+            <p>Webcam con resolución 1080p para videollamadas nítidas.</p>
+            <span class="precio">$589</span>
+            <button class="btn-compra" onclick="agregarAlCarrito('Webcam Full HD', 589)">Comprar</button>
+        </div>
+    </div>
+
+    <div class="producto">
+        <img src="https://m.media-amazon.com/images/I/71QA6YdFbfL._AC_SX522_.jpg" alt="Producto 6">
+        <div class="detalle">
+            <h3>Micrófono Condensador</h3>
+            <p>Micrófono ideal para streaming y grabación.</p>
+            <span class="precio">$1,199</span>
+            <button class="btn-compra" onclick="agregarAlCarrito('Micrófono Condensador', 1199)">Comprar</button>
+        </div>
+    </div>
+</div>
+
+<!-- Carrito de Compras -->
+<div id="carrito" style="display: none;">
+    <h2>Carrito de Compras</h2>
+    <ul id="lista-carrito"></ul>
+    <p>Total: $<span id="total-carrito">0</span></p>
+    <button onclick="pagar()">Pagar</button>
+    <button onclick="vaciarCarrito()">Vaciar Carrito</button>
+</div>
+
+<!-- Pie de página -->
+<footer>
+    <p>&copy; 2025 Tec Family. Todos los derechos reservados.</p>
+</footer>
+
+<script>
+    let carrito = [];
+    let total = 0;
+
+    function agregarAlCarrito(nombre, precio) {
+        const producto = { nombre, precio };
+        carrito.push(producto);
+        total += precio;
+        actualizarCarrito();
+    }
+
+    function actualizarCarrito() {
+        const listaCarrito = document.getElementById('lista-carrito');
+        listaCarrito.innerHTML = '';
+        carrito.forEach(producto => {
+            const li = document.createElement('li');
+            li.textContent = `${producto.nombre} - $${producto.precio}`;
+            listaCarrito.appendChild(li);
+        });
+        document.getElementById('total-carrito').textContent = total.toFixed(2);
+        document.getElementById('carrito').style.display = 'block';
+    }
+
+    function vaciarCarrito() {
+        carrito = [];
+        total = 0;
+        actualizarCarrito();
+        document.getElementById('carrito').style.display = 'none';
+    }
+
+    function pagar() {
+        if (carrito.length === 0) {
+            alert('El carrito está vacío');
+            return;
+        }
+        alert(`Compra realizada con éxito. Total a pagar: $${total.toFixed(2)}`);
+        vaciarCarrito();
+    }
+</script>
+
+</body>
+</html
+::contentReference[oaicite:4]{index=4}
