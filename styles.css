@@ -1,0 +1,33 @@
+body {
+  font-family: Arial, sans-serif;
+  padding: 20px;
+}
+
+#carrito-container {
+  margin-bottom: 20px;
+}
+
+.carrito-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.carrito-img {
+  width: 50px;
+  height: 50px;
+  margin-right: 10px;
+}
+
+.info {
+  flex-grow: 1;
+}
+
+button {
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+#pago-formulario {
+  margin-top: 20px;
+}
